@@ -12,7 +12,7 @@ class NewsletterController extends Controller
     {
         $validated = $request->validate(['campaign_id' => 'required|integer']);
 
-        Http::post('https://api-external.com/send', $validated);
+        Http::post('http://mock-api:1337/send', $validated);
 
         ProcessNewsletter::dispatchSync($validated);
 
