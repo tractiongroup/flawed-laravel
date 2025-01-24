@@ -45,6 +45,17 @@ services:
     networks:
       - redis-network
 
+  mock-api:
+    build:
+      context: ./mock-api
+      dockerfile: Dockerfile
+    container_name: mock-api
+    restart: unless-stopped
+    ports:
+      - "1337:1337"
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
