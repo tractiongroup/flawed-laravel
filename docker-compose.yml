@@ -34,7 +34,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USERNAME}
     ports:
-      - "3306:3307"  # Intentional port mismatch
+      - "3306:3307"
     networks:
       - app-network
 
@@ -43,7 +43,7 @@ services:
     container_name: laravel-redis
     restart: unless-stopped
     networks:
-      - redis-network  # Isolated network
+      - redis-network
 
 networks:
   app-network:
